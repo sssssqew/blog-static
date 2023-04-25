@@ -61,24 +61,25 @@ header .mode{
 header .mode i:not(.active){
   display: none;
 }
+/* 서비스, 스토리, 연락처 */
 section{
-  width: 100vw;
+  width: 60vw;
+  margin: 0 auto;
 }
-/* 서비스 */
-.about .image img{
+.image img{
   height: 70vh;
   width: 100%;
 }
-.about .content{
-  padding: 5rem 10rem;
+.content{
+  padding: 5rem 2rem;
 }
-.about .content h3{
+.content h3{
   width: 50%;
   font-size: 2rem;
   color: var(--primary-color);
   /* border: 1px solid red; */
 }
-.about .content p{
+.content p{
   font-size: 1.2rem;
   padding: 1rem 0;
   width: 50%;
@@ -86,7 +87,7 @@ section{
   line-height: 2rem;
   /* border: 1px solid green; */
 }
-.about .content button{
+.content button{
   width: 12rem;
   height: 3.5rem;
   background: var(--primary-color);
@@ -98,7 +99,7 @@ section{
   transition: .2s;
   margin-top: 2rem;
 }
-.about .content button:hover{
+.content button:hover{
   background: var(--secondary-color);
   letter-spacing: .2rem;
 }
@@ -106,6 +107,7 @@ section{
 
 /* 푸터 */
 .footer{
+  width: 100vw;
   background: var(--primary-color);
 }
 .footer .icons{
