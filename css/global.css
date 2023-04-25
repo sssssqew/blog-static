@@ -3,7 +3,7 @@
 /* 브랜드 색상 */
 :root{
   --primary-color: orange;
-  --secondary-color: yellow;
+  --secondary-color: darkorange;
 }
 
 *{
