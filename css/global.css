@@ -1,5 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300&family=Nanum+Gothic+Coding&display=swap');
 
+/* 브랜드 색상 */
 :root{
   --primary-color: orange;
   --secondary-color: yellow;
@@ -7,4 +8,14 @@
 
 *{
   box-sizing: border-box;
+}
+/* 마우스 드래그시 배경색 설정 */
+*::selection{
+  background: var(--primary-color);
+  color: #fff;
+}
+/* 수평 스크롤 제거 */
+html{
+  font-family: 'Nanum Gothic Coding', monospace;
+  overflow-x: hidden;
 }
