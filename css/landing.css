@@ -80,6 +80,7 @@ section{
   width: 50%;
   font-size: 2rem;
   color: var(--primary-color);
+  transition: 1s ease-out;
 }
 .content p{
   font-size: 1.2rem;
@@ -87,6 +88,7 @@ section{
   width: 50%;
   margin-left: auto;
   line-height: 2rem;
+  transition: 1s ease-out;
 }
 .content button{
   width: 12rem;
@@ -160,4 +162,30 @@ section{
   height: 1.5rem;
   font-size: 1.5rem;
   margin-right: .5rem;
+}
+
+/* 애니메이션 효과 */
+.up{
+  /* y 좌표를 아래쪽으로 100px 만큼 내린다 */
+  transform: translate(0, 100px); 
+  opacity: 0;
+}
+.down{
+  /* y 좌표를 위쪽으로 100px 만큼 올린다 */
+  transform: translate(0, -100px);
+  opacity: 0;
+}
+/* x 좌표를 오른쪽으로 100px 만큼 이동한다 */
+.left {
+  transform: translate(100px, 0);
+  opacity: 0;
+}
+/* x 좌표를 왼쪽으로 100px 만큼 이동한다 */
+.right {
+  transform: translate(-100px, 0);
+  opacity: 0;
+}
+.show{
+  opacity: 1;
+  transform: none;
 }

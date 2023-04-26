@@ -15,8 +15,7 @@ window.addEventListener("load", (event) => {
     }
   })
 
-  // 현재 스크롤이 위치한 섹션의 메뉴 하이라이트 주기
-  const sections = document.querySelectorAll('section:not(.footer)')
+  const sections = document.querySelectorAll('section:not(.footer)') // 푸터를 제외한 section 엘리먼트 조회
   const nav = document.querySelector('.navbar ul')
 
   window.addEventListener('scroll', (event) => {
@@ -24,8 +23,24 @@ window.addEventListener("load", (event) => {
       // console.log(section.id, section.getBoundingClientRect().top, section.offsetHeight)
 
       if(section.getBoundingClientRect().top < header.offsetHeight){
+        // 현재 스크롤이 위치한 섹션의 메뉴 하이라이트 주기
         nav.querySelector('a.active').classList.remove('active')
         nav.querySelector(`a[href="#${section.id}"]`).classList.add('active')
+
+        // 텍스트 애니메이션 효과 주기
+        const title = section.querySelector('.content h3') // 스크롤할때마다 querySelector 를 사용해서 DOM에 접근하면 성능이 저하되므로 특정상황에서만 하기
+        const paragraph = section.querySelector('.content p')
+        title.classList.add('show')
+        paragraph.classList.add('show')
+      }
+
+      // 스크롤이 브라우저 맨 상단에 도달하면 텍스트 애니메이션 초기화하기
+      // console.log(window.pageYOffset)
+      if(window.pageYOffset < 10){
+        const title = section.querySelector('.content h3') // 스크롤할때마다 querySelector 를 사용해서 DOM에 접근하면 성능이 저하되므로 특정상황에서만 하기
+        const paragraph = section.querySelector('.content p')
+        title.classList.remove('show')
+        paragraph.classList.remove('show')
       }
     })
 
