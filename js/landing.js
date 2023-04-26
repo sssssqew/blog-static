@@ -23,6 +23,9 @@ window.addEventListener("load", (event) => {
     anchor.addEventListener('click', function (event) {
         event.preventDefault();
 
+        // console.log(this.getAttribute('href')) // #about, #story, #contact
+        // console.log(document.querySelector(this.getAttribute('href'))) // 내가 클릭한 메뉴 링크에 대한 section 엘리먼트 
+
         document.querySelector(this.getAttribute('href')).scrollIntoView({ // 화살표 함수가 아니라 function 키워드를 사용해야 this 값이 anchor 엘리먼트를 가리킴
             behavior: 'smooth'
         });
