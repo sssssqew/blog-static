@@ -18,6 +18,17 @@ window.addEventListener("load", (event) => {
   const sections = document.querySelectorAll('section:not(.footer)') // 푸터를 제외한 section 엘리먼트 조회
   const nav = document.querySelector('.navbar ul')
 
+  // 메뉴 (서비스, 스토리, 연락처) 클릭시 스크롤 매끄럽게 하기
+  nav.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (event) {
+        event.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({ // 화살표 함수가 아니라 function 키워드를 사용해야 this 값이 anchor 엘리먼트를 가리킴
+            behavior: 'smooth'
+        });
+    });
+  });
+
   window.addEventListener('scroll', (event) => {
     sections.forEach(section => {
       // console.log(section.id, section.getBoundingClientRect().top, section.offsetHeight)
