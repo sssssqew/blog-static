@@ -268,7 +268,7 @@ section.about{ /* 그냥 .about 으로 하니까 적용안되고 section.about �
     line-height: 1.5rem;
   }
   .content button{
-    bottom: 2rem;
+    bottom: 5rem;
   }
 }
 @media (max-width: 380px){
