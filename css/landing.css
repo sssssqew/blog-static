@@ -196,3 +196,98 @@ section.about{ /* 그냥 .about 으로 하니까 적용안되고 section.about �
   opacity: 1;
   transform: none;
 }
+@media (max-width: 1000px){
+  section:not(.footer){
+    width: 90vw;  
+  }
+  .content{
+    display: flex;
+    flex-flow: column;
+  }
+  .content h3, .content p{
+    width: 100%;
+    text-align: center;
+  }
+  .content h3{
+    font-size: 4rem;
+  }
+  .content p{
+    font-size: 2.5rem;
+    line-height: 3rem;
+  }
+  .content button{
+    width: 100%;
+    height: 5rem;
+    border-radius: 3rem;
+    font-size: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 1.5rem;
+  }
+}
+@media (max-width: 830px){
+  .content h3{
+    font-size: 3rem;
+  }
+  .content p{
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+}
+@media (max-width: 550px){
+  header .navbar ul{
+    display: none;
+  }
+  .content h3{
+    font-size: 1.5rem;
+  }
+  .content p{
+    font-size: 1.1rem;
+    line-height: 1.5rem;
+  }
+  .content button{
+    height: 3rem;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 420px){
+  header .logo{
+    font-size: 1.2rem;
+  }
+  .content{
+    padding: 2rem 1rem;
+    display: flex;
+    flex-flow: column;
+  }
+  .content h3{
+    font-size: 1.7rem;
+  }
+  .content p{
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+  }
+}
+@media (max-width: 380px){
+  .content{
+    padding: 1rem 1rem;
+  }
+  .content h3{
+    font-size: 1.7rem;
+  }
+  .content button{
+    bottom: 1rem;
+  }
+  .image img{
+    max-height: 40vh;
+  }
+}
+@media (max-width: 300px){
+  .content h3{
+    font-size: 1.2rem;
+  }
+  .content p{
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+}
