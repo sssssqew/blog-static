@@ -75,7 +75,7 @@ section.about{ /* 그냥 .about 으로 하니까 적용안되고 section.about �
   max-height: 100vh; 
 }
 .image img{
-  height: 50vh;
+  height: 50vw;
   width: 100%;
 }
 .content{
@@ -249,6 +249,9 @@ section.about{ /* 그냥 .about 으로 하니까 적용안되고 section.about �
     height: 3rem;
     font-size: 1.2rem;
   }
+  .image img{
+    height: 300px !important;
+  }
 }
 
 @media (max-width: 420px){
@@ -268,7 +271,10 @@ section.about{ /* 그냥 .about 으로 하니까 적용안되고 section.about �
     line-height: 1.5rem;
   }
   .content button{
-    bottom: 5rem;
+    bottom: 2rem;
+  }
+  .image img{
+    height: 350px !important;
   }
 }
 @media (max-width: 380px){
@@ -280,9 +286,6 @@ section.about{ /* 그냥 .about 으로 하니까 적용안되고 section.about �
   }
   .content button{
     bottom: 1rem;
-  }
-  .image img{
-    max-height: 40vh;
   }
 }
 @media (max-width: 300px){
