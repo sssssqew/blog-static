@@ -61,21 +61,25 @@ header .mode i:not(.active){
   display: none;
 }
 /* 서비스, 스토리, 연락처 */
-section{
-  width: 60vw;
+section:not(.footer){
+  width: 50vw;  
+  height: calc(100vh - 80px); /* 헤더높이만큼 제외함 */
+  min-height: calc(100vh - 80px); /* 헤더높이만큼 제외함 */
+  max-height: calc(100vh - 80px); /* 헤더높이만큼 제외함 */
   margin: 0 auto;
-  /* border: 1px solid red; */
+  position: relative;
 }
-.about{
-  padding-top: 10rem;
+section.about{ /* 그냥 .about 으로 하니까 적용안되고 section.about 으로 해야 적용됨. 시맨틱 태그라서 그런듯 */
+  height: 100vh; /* 헤더의 position이 fixed이므로 about 섹션이 헤더높이만큼 위로 올라가서 공간이 80px만큼 남기 때문에 전체높이 100vh 에 맞춰야 공간이 안남음*/
+  min-height: 100vh; 
+  max-height: 100vh; 
 }
 .image img{
-  height: 70vh;
+  height: 50vh;
   width: 100%;
-  border-radius: 1rem;
 }
 .content{
-  padding: 5rem 2rem;
+  padding: 3rem 2rem;
 }
 .content h3{
   width: 50%;
@@ -102,6 +106,8 @@ section{
   font-size: 1.5rem;
   transition: .2s;
   margin-top: 2rem;
+  position: absolute;
+  bottom: 2rem;
 }
 .content button:hover{
   background: var(--secondary-color);
@@ -111,7 +117,7 @@ section{
 
 /* 푸터 */
 .footer{
-  width: 100vw;
+  width: 100vw; /* section width 는 45vw 이지만 css 우선순위 때문에 푸터에는 100vw 가 적용됨 */
   background: var(--primary-color);
 }
 .footer .icons{
