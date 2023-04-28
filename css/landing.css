@@ -255,6 +255,11 @@ section.about{ /* 그냥 .about 으로 하니까 적용안되고 section.about �
   header .logo{
     font-size: 1.2rem;
   }
+  section:not(.footer){
+    height: calc(100vh - 80px - 80px); /* 헤더높이만큼 제외함 */
+    min-height: calc(100vh - 80px - 80px); /* 헤더높이만큼 제외함 */
+    max-height: calc(100vh - 80px - 80px); /* 헤더높이만큼 제외함 */
+  }
   .content{
     padding: 2rem 1rem;
     display: flex;
@@ -268,10 +273,10 @@ section.about{ /* 그냥 .about 으로 하니까 적용안되고 section.about �
     line-height: 1.5rem;
   }
   .content button{
-    bottom: 10rem;
+    bottom: 2rem;
   }
 }
-@media (max-width: 400px){
+@media (max-width: 380px){
   .content{
     padding: 1rem 1rem;
   }
