@@ -255,6 +255,18 @@ section.about{ /* 그냥 .about 으로 하니까 적용안되고 section.about �
 }
 
 @media (max-width: 420px){
+  section:not(.footer):-webkit-full-screen {
+    width: 100% !important;
+  }
+  section:not(.footer):-moz-full-screen {
+    width: 100% !important;
+  }
+  section:not(.footer):-ms-fullscreen {
+    width: 100% !important;
+  }
+  section:not(.footer):fullscreen {
+    width: 100% !important;
+  }
   header .logo{
     font-size: 1.2rem;
   }
