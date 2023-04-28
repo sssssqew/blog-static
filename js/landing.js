@@ -2,8 +2,6 @@
 const scroller = new Scroller(false)
 
 window.addEventListener("load", (event) => {
-  window.scrollTo(0, 1);
-
   // 테마변경 (다크모드/ 일반모드)
   const mode = document.querySelector('.mode')
   const icons = mode.querySelectorAll('.fa-solid')
