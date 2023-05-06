@@ -148,10 +148,74 @@ header .navbar ul li .search-container .keyword:focus{
 }
 /* 블로그 목록 섹션 */
 .blog-container{
-  width: 70vw;
+  width: 50vw;
   margin: 0 auto;
   border: 3px solid red;
 }
+.blog-container .blog{
+  display: flex;
+  /* border: 1px solid blue; */
+  padding: 2rem 1rem;
+  border-bottom: 1px solid #eee;
+}
+.blog-container .blog > div{
+  border: 1px solid green;
+}
+.blog-container .blog > div > ul{
+  display: flex;
+  flex-flow: column;
+}
+.blog-container .blog .right img{
+  height: 100%;
+  width: 100%;
+}
+.blog-container .blog .left, .blog-container .blog .right{
+  width: 35rem;
+}
+.blog-container .blog .left .category-name a{
+  color: var(--primary-color);
+}
+.blog-container .blog .left .category-name a:hover{
+  color: var(--secondary-color);
+  text-decoration: underline  ;
+}
+.blog-container .blog .middle{
+  flex-grow: 1;
+  padding: 0rem 1.5rem;
+}
+.blog-container .blog .middle > ul h3{
+  color: #333;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+.blog-container .blog .middle > ul p{
+  padding: 1rem 0;
+  line-height: 1.3rem;
+  font-size: 1rem;
+}
+.blog-container .blog .middle .account{
+  display: flex;
+  align-items: center;
+}
+.blog-container .blog .middle .account img{
+  width: 2rem;
+  height: 2rem;
+  margin-right: .5rem;
+  border-radius: 50%;
+}
+.blog-container .blog .middle .account span{
+  font-size: .9rem;
+  color: #bbb;
+  margin-left: .5rem;
+}
+.blog-container .blog .middle > ul ul{
+  display: flex;
+  justify-content: space-between;
+}
+
+
+
+
 
 /* 푸터 하단고정 */
 .footer{
