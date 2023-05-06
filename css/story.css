@@ -161,7 +161,7 @@ header .navbar ul li .search-container .keyword:focus{
   border-bottom: 1px solid #eee;
 }
 .blog-container .blog > div{
-  border: 1px solid green;
+  /* border: 1px solid green; */
 }
 .blog-container .blog > div > ul{
   display: flex;
@@ -239,10 +239,10 @@ header .navbar ul li .search-container .keyword:focus{
   box-shadow: none;
 }
 .blog-container .blog .right{
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 .blog-container .blog .right img{
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
   height: 100%;
   width: 100%;
 }
