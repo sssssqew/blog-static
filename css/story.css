@@ -140,6 +140,7 @@ header .navbar ul li .search-container .keyword:focus{
   font-size: 1rem;
   font-weight: 700;
   padding: 0rem 1rem;
+  box-shadow: 0 0 .3rem rgba(0, 0, 0, .3);
   transition: .2s;
 }
 .category-container ul li button:hover{
@@ -150,10 +151,11 @@ header .navbar ul li .search-container .keyword:focus{
 .blog-container{
   width: 50vw;
   margin: 0 auto;
-  border: 3px solid red;
+  /* border: 3px solid red; */
 }
 .blog-container .blog{
   display: flex;
+  /* flex-wrap: wrap; */
   /* border: 1px solid blue; */
   padding: 2rem 1rem;
   border-bottom: 1px solid #eee;
@@ -165,26 +167,34 @@ header .navbar ul li .search-container .keyword:focus{
   display: flex;
   flex-flow: column;
 }
-.blog-container .blog .right img{
-  height: 100%;
-  width: 100%;
+.blog-container .blog .left, 
+.blog-container .blog .right{
+  width: 150px;
+  min-width: 150px;
 }
-.blog-container .blog .left, .blog-container .blog .right{
-  width: 35rem;
+.blog-container .blog .left .posting-time{
+  margin-top: 1rem;
+  margin-bottom: .3rem;
+  color: #aaa;
 }
 .blog-container .blog .left .category-name a{
   color: var(--primary-color);
 }
 .blog-container .blog .left .category-name a:hover{
   color: var(--secondary-color);
-  text-decoration: underline  ;
+  text-decoration: underline;
+}
+.blog-container .blog .left .likes{
+  margin-right: .5rem;
+}
+.blog-container .blog .left span{
+  color: var(--primary-color);
 }
 .blog-container .blog .middle{
   flex-grow: 1;
   padding: 0rem 1.5rem;
 }
 .blog-container .blog .middle > ul h3{
-  color: #333;
   font-weight: 700;
   font-size: 1.5rem;
 }
@@ -192,6 +202,7 @@ header .navbar ul li .search-container .keyword:focus{
   padding: 1rem 0;
   line-height: 1.3rem;
   font-size: 1rem;
+  color: gray;
 }
 .blog-container .blog .middle .account{
   display: flex;
@@ -202,6 +213,7 @@ header .navbar ul li .search-container .keyword:focus{
   height: 2rem;
   margin-right: .5rem;
   border-radius: 50%;
+  cursor: pointer;
 }
 .blog-container .blog .middle .account span{
   font-size: .9rem;
@@ -211,6 +223,28 @@ header .navbar ul li .search-container .keyword:focus{
 .blog-container .blog .middle > ul ul{
   display: flex;
   justify-content: space-between;
+}
+.blog-container .blog .middle > ul ul button{
+  width: 5rem;
+  height: 2rem;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+  background: #333;
+  box-shadow: 0 0 .3rem rgba(0, 0, 0, .3);
+  transform: .2s;
+}
+.blog-container .blog .middle > ul ul button:hover{
+  background: var(--secondary-color);
+  box-shadow: none;
+}
+.blog-container .blog .right{
+  border: 1px solid red;
+}
+.blog-container .blog .right img{
+  border: 1px solid blue;
+  height: 100%;
+  width: 100%;
 }
 
 
