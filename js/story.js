@@ -46,7 +46,7 @@ window.addEventListener("load", (event) => {
     document.body.offsetHeight, document.documentElement.offsetHeight,
     document.body.clientHeight, document.documentElement.clientHeight
     );
-    if(Math.abs(scroller.getScrollPosition() + document.documentElement.clientHeight - scrollHeight) < 50){ // 스크롤을 브라우저창 아래까지 다 내린경우
+    if(Math.abs(scroller.getScrollPosition() + document.documentElement.clientHeight - scrollHeight) < 100){ // 스크롤을 브라우저창 아래까지 다 내린경우
       console.log('scroll is bottom of browser!')
       blogContainer.innerHTML += getBlogList(10) // 블로그글 10개씩 추가하기
     }
