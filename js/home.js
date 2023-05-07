@@ -32,4 +32,18 @@ window.addEventListener("load", (event) => {
       footer.classList.remove('hide')
     }
   })
+
+  // 브라우저 상단으로 스크롤하기
+  const arrowUp = document.querySelector('.footer .icons .scroll-up')
+  arrowUp.addEventListener('click', (event) => {
+    history.pushState({}, "", `#`); // URL 주소 변경 필요함
+    scroller.setScrollPosition({top: 0, behavior: 'smooth'})
+  })
+
+  const logo = document.querySelector('header .logo')
+  logo.addEventListener('click', (event) => {
+    event.preventDefault() // 부드러운 스크롤링
+    history.pushState({}, "", `#`); // URL 주소 변경 필요함
+    scroller.setScrollPosition({top: 0, behavior: 'smooth'}) // 섹션으로 이동하지 않도록 방지하는 역할 (설정하지 않으면 스크롤링되면서 이전 섹션으로 이동함)
+  })
 })
