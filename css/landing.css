@@ -71,11 +71,6 @@ section:not(.footer){
   margin: 0 auto;
   position: relative;
 }
-section.about{ /* 그냥 .about 으로 하니까 적용안되고 section.about 으로 해야 적용됨. 시맨틱 태그라서 그런듯 */
-  height: 100vh; /* 헤더의 position이 fixed이므로 about 섹션이 헤더높이만큼 위로 올라가서 공간이 80px만큼 남기 때문에 전체높이 100vh 에 맞춰야 공간이 안남음*/
-  min-height: 100vh; 
-  max-height: 100vh; 
-}
 .image img{
   height: 50vh;
   width: 100%;
