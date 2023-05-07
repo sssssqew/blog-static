@@ -4,6 +4,7 @@
 :root{
   --primary-color: orange;
   --secondary-color: darkorange;
+  --header-height: 80px;
 }
 
 *{

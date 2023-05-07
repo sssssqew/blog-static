@@ -65,9 +65,9 @@ header .mode i:not(.active){
 /* 서비스, 스토리, 연락처 */
 section:not(.footer){
   width: 50vw;  
-  height: calc(100vh - 80px); /* 헤더높이만큼 제외함 */
-  min-height: calc(100vh - 80px); /* 헤더높이만큼 제외함 */
-  max-height: calc(100vh - 80px); /* 헤더높이만큼 제외함 */
+  height: calc(100vh - var(--header-height)); /* 헤더높이만큼 제외함 */
+  min-height: calc(100vh - var(--header-height)); /* 헤더높이만큼 제외함 */
+  max-height: calc(100vh - var(--header-height)); /* 헤더높이만큼 제외함 */
   margin: 0 auto;
   position: relative;
 }

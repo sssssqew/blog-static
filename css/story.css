@@ -115,7 +115,7 @@ header .navbar ul li .search-container .keyword:focus{
 .category-container{
   width: 100vw;  
   background: #fff;
-  position: sticky; top: 80px;
+  position: sticky; top: var(--header-height);
   z-index: 1;
   padding: 1rem 2rem;
 
@@ -147,6 +147,7 @@ header .navbar ul li .search-container .keyword:focus{
   background: var(--secondary-color);
   letter-spacing: .2rem;
 }
+
 /* 블로그 목록 섹션 */
 .blog-container{
   width: 50vw;
@@ -261,7 +262,7 @@ header .navbar ul li .search-container .keyword:focus{
 /* 반응형웹 */
 @media (max-width: 420px){
   header .navbar ul li .search-container{
-    position: fixed; top: 80px; /* fixed 이므로 카테고리 섹션이 위로 올라와야 되지만 카테고리 섹션의 margin top 때문에 올라오지 않음 */
+    position: fixed; top: var(--header-height); /* fixed 이므로 카테고리 섹션이 위로 올라와야 되지만 카테고리 섹션의 margin top 때문에 올라오지 않음 */
     left: 0; right: 0;
     margin: 0 auto;
     width: 85%;
