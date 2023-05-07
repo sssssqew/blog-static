@@ -6,6 +6,7 @@ window.addEventListener("load", (event) => {
   const icons = mode.querySelectorAll('.fa-solid')
   const header = document.querySelector('header')
   const categoryContainer =  document.querySelector('.category-container')
+  const footer = document.querySelector('.footer')
 
   mode.addEventListener('click', (event) => {
     document.body.classList.toggle('dark')
@@ -25,9 +26,14 @@ window.addEventListener("load", (event) => {
     .then(result => console.log('scroll ended!'))
     .catch(err => console.log('scrolling...'))
   
-    scroller.getScrollPosition() > header.offsetHeight ? 
-      header.classList.add('active') 
-      : header.classList.remove('active')
+    if(scroller.getScrollPosition() > header.offsetHeight){
+      header.classList.add('active')
+      footer.classList.add('hide')
+    }else{
+      header.classList.remove('active')
+      footer.classList.remove('hide')
+    }
+      
   })
 
   // 브라우저 상단으로 스크롤하기
