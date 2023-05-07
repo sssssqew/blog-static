@@ -230,7 +230,7 @@ section:not(.footer){
     font-size: 1.2rem;
   }
   .content p{
-    font-size: 1rem;
+    font-size: .8rem;
     line-height: 1.5rem;
   }
 }
