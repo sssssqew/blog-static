@@ -95,15 +95,42 @@ header .toolbox > div > a:hover{
   justify-content: flex-start;
 }
 .post-container > div{
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
 }
 /* 카테고리 */
 .post-container .post-category{
   height: 2rem;
+  margin-top: 3rem;
 } 
 .post-container .post-category select{
   width: 10rem;
   height: 100%;
   padding-left: .5rem;
+}
+/* 제목 */
+.post-container .post-title{
+  height: 4rem;
+  margin: 1rem 0;
+  padding: .7rem 0;
+  border-bottom: 1px solid #eee;
+}
+.post-container .post-title input{
+  outline: none;
+  border: none;
+  height: 100%;
+  font-size: 2rem;
+}
+/* 컨텐츠 영역 */
+.post-container .post-contents{
+  border: 1px solid red;
+  flex-grow: 1;
+}
+.post-container .post-contents textarea{
+  resize: none;
+  outline: none;
+  border: none;
+  width: 100%;
+  min-height: 32rem;
+  font-size: 1rem;
 }
 
