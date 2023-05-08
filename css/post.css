@@ -85,4 +85,25 @@ header .toolbox > div > a{
 header .toolbox > div > a:hover{
   color: var(--primary-color);
 }
+/* 블로그 포스트 섹션 */
+.post-container{
+  width: 50vw;
+  margin: 0 auto;
+  min-height: calc(100vh - 3 * var(--header-height));
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+}
+.post-container > div{
+  border: 1px solid blue;
+}
+/* 카테고리 */
+.post-container .post-category{
+  height: 2rem;
+} 
+.post-container .post-category select{
+  width: 10rem;
+  height: 100%;
+  padding-left: .5rem;
+}
 
