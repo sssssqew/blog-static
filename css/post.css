@@ -122,7 +122,7 @@ header .toolbox > div > a:hover{
 }
 /* 컨텐츠 영역 */
 .post-container .post-contents{
-  border: 1px solid red;
+  /* border: 1px solid red; */
   flex-grow: 1;
 }
 .post-container .post-contents textarea{
@@ -132,5 +132,11 @@ header .toolbox > div > a:hover{
   width: 100%;
   min-height: 32rem;
   font-size: 1rem;
+}
+/* 태그 */
+.post-container .post-tags ul{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 }
 
