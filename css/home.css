@@ -160,6 +160,8 @@ header .navbar ul li .account img{ /* 아바타 스타일링 추가 */
 .blog-container .blog .right{ /* 수정 */
   width: 100%;
   min-width: 100%;
+  opacity: 1;
+  transform: none;
 }
 .blog-container .blog .left .posting-time{
   margin-top: 1rem;
