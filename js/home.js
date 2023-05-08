@@ -18,11 +18,31 @@ window.addEventListener("load", (event) => {
     }
   })
 
+  const sections = document.querySelectorAll('.blog-container > div:not(.follow)') // 푸터를 제외한 section 엘리먼트 조회
+
   window.addEventListener('scroll', (event) => {
     // 스크롤이 끝났음을 검사하기 (스크롤되는 동안 setTimeout 내부의 콜백함수는 clearTimeout 에 의해 실행되지 않다가 스크롤이 끝나면 더이상 clearTimeout 이 실행되지 않으므로 스크롤이 끝나고 100ms 후에 스크롤이 끝났음을 콜백함수 실행을 알려줌)
     scroller.isScrollended()
     .then(result => console.log('scroll ended!'))
     .catch(err => console.log('scrolling...'))
+
+    sections.forEach(section => {
+      // console.log(section.id, section.getBoundingClientRect().top, section.offsetHeight)
+
+      if(section.getBoundingClientRect().top < header.offsetHeight + 200){
+
+        // 텍스트 애니메이션 효과 주기 (html 문서에서 about 섹션의 content 에는 right down 클래스를 제외해서 애니메이션 효과 제외함)
+        const blogs = section.querySelectorAll('.blog') // 스크롤할때마다 querySelector 를 사용해서 DOM에 접근하면 성능이 저하되므로 특정상황에서만 하기
+        blogs.forEach(blog => blog.classList.add('show'))
+      }
+
+      // 스크롤이 브라우저 맨 상단에 도달하면 텍스트 애니메이션 초기화하기
+      // console.log(scroller.getScrollPosition())
+      if(scroller.getScrollPosition() < 10){
+        const blogs = section.querySelectorAll('.blog') // 스크롤할때마다 querySelector 를 사용해서 DOM에 접근하면 성능이 저하되므로 특정상황에서만 하기
+        blogs.forEach(blog => blog.classList.remove('show'))
+      }
+    })
   
     if(scroller.getScrollPosition() > header.offsetHeight){
       header.classList.add('active')

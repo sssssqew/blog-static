@@ -1,6 +1,7 @@
 @import url('reset.css');
 @import url('global.css');
 @import url('footer.css');
+@import url('animation.css');
 
 /* 다크 테마 */
 body.dark, header.dark{
@@ -146,6 +147,7 @@ header .navbar ul li .account img{ /* 아바타 스타일링 추가 */
   border-bottom: none;
   box-shadow: 0 0 .2rem rgba(0, 0, 0, .3);
   cursor: pointer;
+  transition: .5s;
 }
 .blog-container .blog > div{
   /* border: 1px solid green; */
