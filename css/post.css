@@ -6,6 +6,12 @@ body.dark, header.dark{
   color: #fff;
   background: #333;
 }
+.post-container .post-title input.dark, /* 추가 */
+.post-container .post-contents textarea.dark,
+.post-container .post-tags input.dark{ 
+  color: #fff;
+  background: #333;
+}
 /* 헤더  */
 header{
   width: 100%;

@@ -7,7 +7,7 @@ body.dark, header.dark{
   color: #fff;
   background: #333;
 }
-.category-container.dark{
+.category-container.dark{ /* 추가 */
   color: #fff;
   background: #333;
 }
