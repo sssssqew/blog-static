@@ -139,4 +139,25 @@ header .toolbox > div > a:hover{
   flex-wrap: wrap;
   justify-content: flex-start;
 }
+.post-container .post-tags ul li:nth-child(1){
+  color: #aaa;
+}
+.post-container .post-tags ul li{
+  margin-right: 1rem;
+}
+.post-container .post-tags ul input{
+  width: 10rem;
+  border: none;
+  outline: none;
+}
+.post-container .post-tags ul li a{
+  color: #aaa;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-left: .2rem;
+  transition: .3s;
+}
+.post-container .post-tags ul li a:hover{
+  color: var(--primary-color);
+}
 

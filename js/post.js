@@ -16,9 +16,17 @@ const tagLength = 10 // 태그 글자수 제한
 tagInput.addEventListener('keyup', function(event){
   console.log('태그 입력중...', event.key)
   if(event.key === 'Enter' && this.value.trim() !== '' && this.value.trim().length <= tagLength && tagList.children.length < tagslimit){
-    const list = document.createElement('li')
-    list.innerHTML = `#${this.value.trim()}<a href='#'>x</a>`
-    tagList.appendChild(list)
+    const tag = document.createElement('li')
+    tag.innerHTML = `#${this.value.trim()}<a href='#'>x</a>`
+    tagList.appendChild(tag)
     this.value = ''
+  }
+})
+
+// 태그 삭제 (이벤트 위임 사용)
+tagList.addEventListener('click', function(event){
+  console.log(event.target, event.target.parentElement, event.target.hasAttribute('href'))
+  if(event.target.hasAttribute('href')){ // x 표시를 클릭시(a 태그인지 확인)
+    tagList.removeChild(event.target.parentElement) // 리스트에서 x 표시한 태그(li) 삭제
   }
 })
