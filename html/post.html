@@ -17,9 +17,9 @@
 
     <div class="toolbox">
       <div class="file-tool">
-        <a href="#"><span class="material-icons">crop_original</span></a>
-        <a href="#"><span class="material-icons">folder_open</span></a>
-        <a href="#"><span class="material-icons">slideshow</span></a>
+        <a href="#"><label for="post-files"><span class="material-icons">crop_original</span></label></a>
+        <a href="#"><label for="post-files"><span class="material-icons">folder_open</span></label></a>
+        <a href="#"><label for="post-files"><span class="material-icons">slideshow</span></label></a>
       </div>
       <div class="text-tool">
         <a href="#"><span class="material-icons">format_bold</span></a>
@@ -82,14 +82,18 @@
     <div class="post-title">
       <input type="text" placeholder="제목을 입력하세요">
     </div>
-    <div class="post-contents">
-      <textarea name="story"></textarea>
+    <div class="post-contents" contentEditable>
     </div>
     <div class="post-tags">
       <ul>
         <li>#<input type="text" placeholder="태그입력"></li>
       </ul>
     </div>
+  </section>
+
+  <!-- 파일처리 섹션 -->
+  <section class="upload hidden">
+    <input type="file" id="post-files" name="post-files" multiple>
   </section>
 
 

@@ -91,6 +91,9 @@ header .toolbox > div > a{
 header .toolbox > div > a:hover{
   color: var(--primary-color);
 }
+header .toolbox > div> a label{ /* 추가 */
+  cursor: pointer;
+}
 /* 블로그 포스트 섹션 */
 .post-container{
   width: 50vw;
@@ -128,17 +131,23 @@ header .toolbox > div > a:hover{
 }
 /* 컨텐츠 영역 */
 .post-container .post-contents{
-  /* border: 1px solid red; */
+  border: 1px solid red;
   flex-grow: 1;
+  border: none;
+  outline: none;
+  font-size: 1rem;
 }
-.post-container .post-contents textarea{
+.post-container img {
+  max-width: 100%;
+}
+/* .post-container .post-contents textarea{
   resize: none;
   outline: none;
   border: none;
   width: 100%;
   min-height: 32rem;
   font-size: 1rem;
-}
+} */
 /* 태그 */
 .post-container .post-tags ul{
   display: flex;
@@ -165,5 +174,10 @@ header .toolbox > div > a:hover{
 }
 .post-container .post-tags ul li a:hover{
   color: var(--primary-color);
+}
+
+/* 파일처리 섹션 */
+.hidden{
+  display: none;
 }
 
