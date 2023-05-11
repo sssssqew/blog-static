@@ -136,7 +136,8 @@ header .toolbox > div> a label{ /* 추가 */
   outline: none;
   font-size: 1rem;
 }
-.post-container img { /* 이미지 파일 */
+.post-container img,
+.post-contents .video-file { /* 이미지 & 비디오 파일 */
   max-width: 100%;
 }
 .post-contents .normal-file{ /* 일반 파일 */

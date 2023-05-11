@@ -57,7 +57,7 @@ window.addEventListener("load", (event) => {
     }
   })
 
-  // 태그 a 태그로 하니까 삭제후 브라우저 상단으로 이동해버린다 (수정하기)
+  // a 태그로 하니까 삭제후 브라우저 상단으로 이동해버린다 (수정하기)
 
   
   // 파일입력 처리하기
@@ -79,6 +79,11 @@ window.addEventListener("load", (event) => {
           lastCaretLine = addFileToCurrentLine(lastCaretLine, img) // 에디터에 파일추가
         }else if(fileType.includes('video')){
           console.log('video')
+          const video = document.createElement('video')
+          video.className = 'video-file'
+          video.controls = true
+          video.src = URL.createObjectURL(file)
+          lastCaretLine = addFileToCurrentLine(lastCaretLine, video)
         }else if(fileType.includes('audio')){
           console.log('audio')
         }else{
