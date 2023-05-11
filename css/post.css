@@ -131,15 +131,33 @@ header .toolbox > div> a label{ /* 추가 */
 }
 /* 컨텐츠 영역 */
 .post-container .post-contents{
-  border: 1px solid red;
   flex-grow: 1;
   border: none;
   outline: none;
   font-size: 1rem;
 }
-.post-container img {
+.post-container img { /* 이미지 파일 */
   max-width: 100%;
 }
+.post-contents .normal-file{ /* 일반 파일 */
+  display: flex;
+  align-items: center;
+  padding: 1rem 1rem;
+  box-shadow: 0 0 .2rem rgba(0, 0, 0, .3);
+}
+.post-contents .normal-file .file-icon{
+  padding-right: 0.5rem;
+}.post-contents .normal-file .file-icon span{
+  font-size: 2.5rem;
+}
+.post-contents .normal-file .file-info h3{
+  margin: .3rem 0;
+}
+.post-contents .normal-file .file-info p{
+  margin: .3rem 0;
+  color: #aaa;
+}
+
 /* .post-container .post-contents textarea{
   resize: none;
   outline: none;
@@ -148,6 +166,7 @@ header .toolbox > div> a label{ /* 추가 */
   min-height: 32rem;
   font-size: 1rem;
 } */
+
 /* 태그 */
 .post-container .post-tags ul{
   display: flex;

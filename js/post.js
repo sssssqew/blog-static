@@ -57,9 +57,12 @@ window.addEventListener("load", (event) => {
     }
   })
 
+  // 태그 a 태그로 하니까 삭제후 브라우저 상단으로 이동해버린다 (수정하기)
+
   
   // 파일입력 처리하기
-  postContents.insertAdjacentElement('afterbegin', createNewline())
+  postContents.focus() // 첫로딩때 커서 보여주기
+  postContents.insertAdjacentElement('afterbegin', createNewline()) // lastCaretLine 을 새로운 줄로 초기화하지 않으면 addFileToCurrentLine 함수를 실행하면 파일이 편집기 외부에 추가된다
   let lastCaretLine = postContents.firstChild 
   const uploadInput = document.querySelector('.upload input')
   uploadInput.addEventListener('change', function(event){
@@ -73,7 +76,7 @@ window.addEventListener("load", (event) => {
           console.log('image')
           const img = document.createElement('img')   
           img.src = URL.createObjectURL(file) // 업로드한 파일의 임시경로 (이미지 경로)
-          addFileToCurrentLine(lastCaretLine, img) // 에디터에 파일추가
+          lastCaretLine = addFileToCurrentLine(lastCaretLine, img) // 에디터에 파일추가
         }else if(fileType.includes('video')){
           console.log('video')
         }else if(fileType.includes('audio')){
@@ -81,20 +84,32 @@ window.addEventListener("load", (event) => {
         }else{
           console.log('file')
           const div = document.createElement('div')
+          div.className = 'normal-file'
+          div.contentEditable = false 
           div.innerHTML = `
             <div class='file-icon'>
               <span class="material-icons">folder</span>
             </div>
             <div class='file-info'>
-              <h3>${file.name}</h3>
+              <h3>${getFileName(file.name, 70)}</h3>
               <p>${getFileSize(file.size)}</p>
             </div>
           `
-          addFileToCurrentLine(lastCaretLine, div) // 에디터에 파일추가
+          lastCaretLine = addFileToCurrentLine(lastCaretLine, div) // 에디터에 파일추가 및 파일이 추가될때마다 커서위치 업데이트하기
         }
       }
-      // 파일을 모두 업로드한 후 커서 보여주기
-      postContents.focus()
+      
+      // 커서위치를 맨 마지막으로 추가된 파일 아래쪽에 위치시키기
+      const selection = document.getSelection()
+      selection.removeAllRanges()
+
+      console.log(lastCaretLine)
+      const range = document.createRange()
+      range.selectNodeContents(lastCaretLine)
+      range.collapse()
+      selection.addRange(range) 
+
+      postContents.focus() // 파일을 모두 업로드한 후 커서 보여주기
     }
   })
 
@@ -108,21 +123,20 @@ window.addEventListener("load", (event) => {
     newline.innerHTML = `<br/>`
     return newline
   }
+  // blur 일때 마지막 커서 위치 바로 아래쪽에 새로운 줄을 생성하고 파일을 추가함
+  // 파일 추가후 다시 아래쪽에 새로운 줄 생성함
   function addFileToCurrentLine(line, file){
-    if(line.length){ // 마지막 커서 위치에 글자가 있는 경우
-      if(line.parentNode.hasAttribute('contenteditable')){ // 첫줄은 line 이 텍스트노드라서 insertAdjacentElement 함수 사용을 못함
-        line.nextSibling.insertAdjacentElement('beforebegin', createNewline()) // 다음줄로 이동후 파일추가
-        line.nextSibling.insertAdjacentElement("afterbegin", file)
-      }else{
-        line.parentNode.insertAdjacentElement('afterend', createNewline()) 
-        line.parentNode.nextSibling.insertAdjacentElement("afterbegin", file)
-      }
-    }else{ // 마지막 커서 위치에 아무것도 없는 경우
-      console.log(line) 
-      line.insertAdjacentElement("afterbegin", file)   
-    }
+    if(line.nodeType === 3) line = line.parentNode // 커서 위치에 글자가 있는 경우 line 은 텍스트노드기 때문에 insertAdjacentElement 적용하지 못함 (부모는 div 엘리먼트라 적용가능)
+    line.insertAdjacentElement("afterend", createNewline())   // 추가
+    line.nextSibling.insertAdjacentElement("afterbegin", file)  
+    line.nextSibling.insertAdjacentElement("afterend", createNewline())
+
+    return line.nextSibling.nextSibling // 추가된 파일 아래쪽에 새로 생성된 줄 
   }
 
+  function getFileName(name, limit){
+    return name.length > limit ? `${name.slice(0, limit)}... ${name.slice(name.lastIndexOf('.'), name.length)}` : name
+  }
   function getFileSize(number) {
     if(number < 1024) {
       return number + 'bytes';
