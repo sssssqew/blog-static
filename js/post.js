@@ -74,22 +74,15 @@ window.addEventListener("load", (event) => {
 
         if(fileType.includes('image')){
           console.log('image')
-          const img = document.createElement('img')   
-          img.src = URL.createObjectURL(file) // 업로드한 파일의 임시경로 (이미지 경로)
+          const img = buildMediaElement('img', { src: URL.createObjectURL(file) })
           lastCaretLine = addFileToCurrentLine(lastCaretLine, img) // 에디터에 파일추가
         }else if(fileType.includes('video')){
           console.log('video')
-          const video = document.createElement('video')
-          video.className = 'video-file'
-          video.controls = true
-          video.src = URL.createObjectURL(file)
+          const video = buildMediaElement('video', { src: URL.createObjectURL(file), className: 'video-file', controls: true })
           lastCaretLine = addFileToCurrentLine(lastCaretLine, video)
         }else if(fileType.includes('audio')){
           console.log('audio')
-          const audio = document.createElement('audio')
-          audio.className = 'audio-file'
-          audio.controls = true
-          audio.src = URL.createObjectURL(file)
+          const audio = buildMediaElement('audio', { src: URL.createObjectURL(file), className: 'audio-file', controls: true })
           lastCaretLine = addFileToCurrentLine(lastCaretLine, audio)
         }else{
           console.log('file')
@@ -155,6 +148,13 @@ window.addEventListener("load", (event) => {
     } else if(number >= 1048576) {
       return (number/1048576).toFixed(1) + 'MB';
     }
+  }
+  function buildMediaElement(tag, options){
+    const mediaElement = document.createElement(tag)
+    for(const option in options){
+      mediaElement[option] = options[option]
+    }
+    return mediaElement
   }
 })
 
