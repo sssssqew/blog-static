@@ -158,6 +158,9 @@ header .toolbox > div> a label{ /* 추가 */
   margin: .3rem 0;
   color: #aaa;
 }
+.post-contents .audio-file{
+  outline: none;
+}
 
 /* .post-container .post-contents textarea{
   resize: none;
